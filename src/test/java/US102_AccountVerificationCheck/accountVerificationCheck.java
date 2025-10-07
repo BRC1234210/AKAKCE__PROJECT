@@ -15,6 +15,7 @@ public class accountVerificationCheck {
         WebDriver chromeDriver=new ChromeDriver();
         chromeDriver.get("https://www.akakce.com/");
         chromeDriver.manage().window().maximize();
+        chromeDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         WebDriverWait wait=new WebDriverWait(chromeDriver,Duration.ofSeconds(30));
 
         final String email="i.ahmedkoc@gmail.com";
