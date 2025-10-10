@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.util.prefs.BackingStoreException;
 
 public class US101 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
         // 1. ve 2. step
@@ -40,7 +40,7 @@ public class US101 {
         // 6.step
         WebElement emailInput = driver.findElement(By.cssSelector("input#new-email"));
 
-        emailInput.sendKeys("kogina9124@aiwanlab.com");
+        emailInput.sendKeys("biholom892@bdnets.com");
 
         WebElement continueBtn = driver.findElement(By.cssSelector("button[id='update']>b"));
 
@@ -67,13 +67,17 @@ public class US101 {
         WebElement createAccountBtn = driver.findElement(By.cssSelector("button[id='update']>b"));
         createAccountBtn.click();
 
-        BaseDriver.threadWait(30);
+        // 9.step
+        Thread.sleep(30000);
 
         WebElement verifyBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='otp-modal']/div[3]/button/b")));
         verifyBtn.click();
 
-        WebElement verifyBtn = wait.until(ExpectedConditions.(By.xpath("//div[@class='otp-modal']/div[3]/button/b")));
-        verifyBtn.click();
+        // 10.step
+
+        WebElement AccountPage = driver.findElement(By.cssSelector("body > h1"));
+        Assert.assertTrue("Hesabım sayfası gorulmedi",AccountPage.isDisplayed());
+        driver.quit();
 
 
 
